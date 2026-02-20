@@ -21,7 +21,7 @@ const EnquiryList = () => {
     useEffect(() => {
         const fetchEnquiries = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/enquiries');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries`);
                 const data = await response.json();
                 setEnquiries(data);
             } catch (error) {
@@ -38,7 +38,7 @@ const EnquiryList = () => {
         e.stopPropagation();
         if (window.confirm("Are you sure you want to delete this enquiry?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/enquiries/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries/${id}`, {
                     method: 'DELETE',
                 });
                 if (response.ok) {
@@ -56,7 +56,7 @@ const EnquiryList = () => {
 
     const handleStatusUpdate = async (id: string, newStatus: string) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/enquiries/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries/${id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })
@@ -88,7 +88,7 @@ const EnquiryList = () => {
         if (!selectedEnquiry) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/enquiries/${selectedEnquiry._id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries/${selectedEnquiry._id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editForm)
@@ -149,8 +149,8 @@ const EnquiryList = () => {
                                     </td>
                                     <td className="p-5">
                                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${enq.status === 'Resolved' ? 'bg-green-50 text-green-700 border-green-200' :
-                                                enq.status === 'Contacted' ? 'bg-blue-50 text-blue-700 border-blue-200' :
-                                                    'bg-yellow-50 text-yellow-700 border-yellow-200'
+                                            enq.status === 'Contacted' ? 'bg-blue-50 text-blue-700 border-blue-200' :
+                                                'bg-yellow-50 text-yellow-700 border-yellow-200'
                                             }`}>
                                             {enq.status}
                                         </span>

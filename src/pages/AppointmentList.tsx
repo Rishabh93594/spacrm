@@ -21,7 +21,7 @@ const AppointmentList = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/appointments');
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments`);
                 const data = await response.json();
                 setAppointments(data);
             } catch (error) {
@@ -38,7 +38,7 @@ const AppointmentList = () => {
         e.stopPropagation();
         if (window.confirm("Are you sure you want to delete this appointment request?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/appointments/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/${id}`, {
                     method: 'DELETE',
                 });
                 if (response.ok) {
