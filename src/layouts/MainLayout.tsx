@@ -16,7 +16,7 @@ export default function MainLayout() {
                 {/* Subtle rose gold accent line at the top */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-60"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
                     <div className="flex items-center gap-8">
                         <div className="flex items-center gap-4 group cursor-pointer" onClick={() => navigate('/')}>
@@ -36,8 +36,8 @@ export default function MainLayout() {
                         </div>
 
                         <nav className="hidden md:flex items-center gap-6">
-                            <button onClick={() => navigate('/')} className="text-sm font-medium text-stone-600 hover:text-primary transition-colors">Appointments</button>
-                            <button onClick={() => navigate('/enquiries')} className="text-sm font-medium text-stone-600 hover:text-primary transition-colors">Enquiries</button>
+                            <button onClick={() => navigate('/')} className="text-base font-medium text-stone-600 hover:text-primary transition-colors">Appointments</button>
+                            <button onClick={() => navigate('/enquiries')} className="text-base font-medium text-stone-600 hover:text-primary transition-colors">Enquiries</button>
                         </nav>
                     </div>
 
@@ -45,7 +45,7 @@ export default function MainLayout() {
                     <div className="flex items-center gap-4">
                         <div className="text-right hidden sm:block">
                             <p className="text-xs text-stone-400 uppercase tracking-widest">Logged in as</p>
-                            <p className="text-sm font-medium text-stone-700">{username}</p>
+                            <p className="text-base font-medium text-stone-700">{username}</p>
                         </div>
                         <button
                             onClick={handleLogout}
@@ -57,7 +57,7 @@ export default function MainLayout() {
                 </div>
             </header>
             <main className="py-10 animate-gentle-fade">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="max-w-[1600px] mx-auto sm:px-6 lg:px-8">
                     <Outlet />
                 </div>
             </main>

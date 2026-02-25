@@ -61,8 +61,8 @@ const AppointmentList = () => {
         <div className="animate-gentle-fade">
             <div className="flex justify-between items-end mb-8">
                 <div>
-                    <h1 className="text-3xl font-serif text-primary mb-2">Appointment Requests</h1>
-                    <p className="text-stone-500">Manage and view incoming booking requests.</p>
+                    <h1 className="text-4xl font-serif text-primary mb-2">Appointment Requests</h1>
+                    <p className="text-lg text-stone-500">Manage and view incoming booking requests.</p>
                 </div>
                 <div className="px-4 py-2 bg-white rounded-lg shadow-sm border border-stone-100 text-sm text-stone-500">
                     Total: <span className="font-semibold text-primary">{appointments.length}</span>
@@ -85,7 +85,7 @@ const AppointmentList = () => {
                             {appointments.map((apt) => (
                                 <tr key={apt._id} className="hover:bg-primary/5 transition-colors group">
                                     <td className="p-5">
-                                        <div className="font-serif text-lg text-stone-800">{apt.name}</div>
+                                        <div className="font-serif text-xl text-stone-800">{apt.name}</div>
                                         <div className="text-xs text-stone-400 mt-0.5">{apt.email}</div>
                                     </td>
                                     <td className="p-5">
@@ -98,8 +98,8 @@ const AppointmentList = () => {
                                     </td>
                                     <td className="p-5 text-stone-600">
                                         <div className="flex flex-col">
-                                            <span className="font-medium">{apt.date}</span>
-                                            <span className="text-stone-400 text-xs">{apt.time}</span>
+                                            <span className="text-lg font-medium">{apt.date}</span>
+                                            <span className="text-stone-400 text-sm">{apt.time}</span>
                                         </div>
                                     </td>
                                     <td className="p-5 text-right">
@@ -138,17 +138,17 @@ const AppointmentList = () => {
                     onClick={() => setSelectedAppointment(null)}
                 >
                     <div
-                        className="bg-white/95 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_25px_80px_rgba(0,0,0,0.25)] max-w-3xl w-full overflow-hidden animate-luxury-scale border border-white/50"
+                        className="bg-white/95 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_25px_80px_rgba(0,0,0,0.25)] max-w-5xl w-full overflow-hidden animate-luxury-scale border border-white/50"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Elegant Header with Quick Info Pills */}
-                        <div className="relative bg-gradient-to-br from-primary/10 via-accent/8 to-white/50 p-10 pb-8 border-b border-stone-100/50">
+                        <div className="relative bg-gradient-to-br from-primary/10 via-accent/8 to-white/50 p-12 pb-10 border-b border-stone-100/50">
                             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMzYsMjMzLDIyOCwwLjUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
                             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
 
                             <div className="relative flex justify-between items-start mb-6">
                                 <div>
-                                    <h2 className="text-3xl font-serif text-primary mb-2 tracking-tight">Appointment Details</h2>
+                                    <h2 className="text-4xl font-serif text-primary mb-2 tracking-tight">Appointment Details</h2>
                                     <div className="flex items-center gap-2 text-stone-500">
                                         <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
                                         <p className="text-xs uppercase tracking-[0.2em] font-semibold">Booking Request</p>
@@ -196,21 +196,21 @@ const AppointmentList = () => {
                         </div>
 
                         {/* Main Content */}
-                        <div className="p-10 space-y-7 bg-gradient-to-br from-white to-stone-50/30">
+                        <div className="p-12 space-y-8 bg-gradient-to-br from-white to-stone-50/30">
                             {/* Client & Service - Side by Side Premium Cards */}
                             <div className="grid md:grid-cols-2 gap-6">
                                 {/* Client Card */}
                                 <div className="group relative overflow-hidden bg-gradient-to-br from-white to-stone-50/50 p-7 rounded-3xl border border-stone-200/80 hover:border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-all duration-500">
                                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
                                     <div className="relative flex items-start gap-4">
-                                        <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary/25 to-primary/10 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-primary/25 to-primary/10 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <p className="text-[10px] uppercase tracking-[0.15em] text-stone-400 font-bold mb-2">Client Name</p>
-                                            <p className="font-serif text-2xl text-stone-800 leading-tight">{selectedAppointment.name}</p>
+                                            <p className="font-serif text-3xl text-stone-800 leading-tight">{selectedAppointment.name}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -219,14 +219,14 @@ const AppointmentList = () => {
                                 <div className="group relative overflow-hidden bg-gradient-to-br from-primary/12 via-primary/8 to-accent/8 p-7 rounded-3xl border border-primary/25 hover:border-primary/40 shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-all duration-500">
                                     <div className="absolute -top-10 -right-10 w-36 h-36 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-500"></div>
                                     <div className="relative flex items-start gap-4">
-                                        <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary/35 to-accent/25 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-primary/35 to-accent/25 flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                             </svg>
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <p className="text-[10px] uppercase tracking-[0.15em] text-stone-500 font-bold mb-2">Selected Service</p>
-                                            <p className="font-semibold text-lg text-stone-800 leading-tight mb-1">{selectedAppointment.service}</p>
+                                            <p className="font-semibold text-xl text-stone-800 leading-tight mb-1">{selectedAppointment.service}</p>
                                         </div>
                                     </div>
                                 </div>

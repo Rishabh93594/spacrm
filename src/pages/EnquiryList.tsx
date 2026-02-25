@@ -115,8 +115,8 @@ const EnquiryList = () => {
         <div className="animate-gentle-fade">
             <div className="flex justify-between items-end mb-8">
                 <div>
-                    <h1 className="text-3xl font-serif text-primary mb-2">Enquiries</h1>
-                    <p className="text-stone-500">Manage and view incoming contact enquiries.</p>
+                    <h1 className="text-4xl font-serif text-primary mb-2">Enquiries</h1>
+                    <p className="text-lg text-stone-500">Manage and view incoming contact enquiries.</p>
                 </div>
                 <div className="px-4 py-2 bg-white rounded-lg shadow-sm border border-stone-100 text-sm text-stone-500">
                     Total: <span className="font-semibold text-primary">{enquiries.length}</span>
@@ -139,7 +139,7 @@ const EnquiryList = () => {
                             {enquiries.map((enq) => (
                                 <tr key={enq._id} className="hover:bg-primary/5 transition-colors group cursor-pointer" onClick={() => { setSelectedEnquiry(enq); setIsEditing(false); }}>
                                     <td className="p-5">
-                                        <div className="font-serif text-lg text-stone-800">{enq.name}</div>
+                                        <div className="font-serif text-xl text-stone-800">{enq.name}</div>
                                         <div className="text-xs text-stone-400 mt-0.5">{enq.email}</div>
                                     </td>
                                     <td className="p-5">
@@ -196,15 +196,15 @@ const EnquiryList = () => {
                     onClick={() => { setSelectedEnquiry(null); setIsEditing(false); }}
                 >
                     <div
-                        className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden animate-scale-up"
+                        className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden animate-scale-up"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {!isEditing ? (
                             // VIEW MODE
                             <>
-                                <div className="p-8 border-b border-stone-100 bg-stone-50/30 flex justify-between items-start">
+                                <div className="p-10 border-b border-stone-100 bg-stone-50/30 flex justify-between items-start">
                                     <div>
-                                        <h2 className="text-2xl font-serif text-primary mb-1">Enquiry Details</h2>
+                                        <h2 className="text-3xl font-serif text-primary mb-1">Enquiry Details</h2>
                                         <p className="text-stone-500 text-sm">
                                             Received on {new Date(selectedEnquiry.createdAt).toLocaleString()}
                                         </p>
@@ -228,30 +228,30 @@ const EnquiryList = () => {
                                     </div>
                                 </div>
 
-                                <div className="p-8 space-y-6">
+                                <div className="p-10 space-y-6">
                                     <div className="grid grid-cols-2 gap-6">
                                         <div>
                                             <label className="text-xs uppercase tracking-widest text-stone-400 font-semibold">Name</label>
-                                            <p className="text-lg font-serif text-stone-800">{selectedEnquiry.name}</p>
+                                            <p className="text-xl font-serif text-stone-800">{selectedEnquiry.name}</p>
                                         </div>
                                         <div>
                                             <label className="text-xs uppercase tracking-widest text-stone-400 font-semibold">Reason</label>
-                                            <p className="text-stone-800">{selectedEnquiry.reason}</p>
+                                            <p className="text-lg text-stone-800">{selectedEnquiry.reason}</p>
                                         </div>
                                         <div>
                                             <label className="text-xs uppercase tracking-widest text-stone-400 font-semibold">Email</label>
-                                            <p className="text-stone-800">{selectedEnquiry.email}</p>
+                                            <p className="text-lg text-stone-800">{selectedEnquiry.email}</p>
                                         </div>
                                         <div>
                                             <label className="text-xs uppercase tracking-widest text-stone-400 font-semibold">Phone</label>
-                                            <p className="text-stone-800">{selectedEnquiry.phone}</p>
+                                            <p className="text-lg text-stone-800">{selectedEnquiry.phone}</p>
                                         </div>
                                     </div>
 
                                     <div>
                                         <label className="text-xs uppercase tracking-widest text-stone-400 font-semibold">Message</label>
                                         <div className="mt-2 p-4 bg-stone-50 rounded-xl border border-stone-100 text-stone-700 whitespace-pre-wrap">
-                                            {selectedEnquiry.message || <span className="italic text-stone-400">No message provided.</span>}
+                                            {selectedEnquiry.message || <span className="italic text-stone-400 text-lg">No message provided.</span>}
                                         </div>
                                     </div>
                                 </div>
